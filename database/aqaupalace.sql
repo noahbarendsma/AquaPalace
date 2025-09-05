@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Gegenereerd op: 05 sep 2025 om 09:43
+-- Gegenereerd op: 05 sep 2025 om 09:49
 -- Serverversie: 10.4.32-MariaDB
 -- PHP-versie: 8.0.30
 
@@ -29,8 +29,8 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `abonnementen` (
   `abonnement_id` int(11) NOT NULL,
-  `begindatum` date NOT NULL,
-  `einddatum` date DEFAULT NULL,
+  `begin_datum` date NOT NULL,
+  `eind_datum` date DEFAULT NULL,
   `type` varchar(50) NOT NULL,
   `status` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
