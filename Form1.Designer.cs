@@ -28,16 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.txtUsername = new System.Windows.Forms.TextBox();
+            this.txtGebruikersnaam = new System.Windows.Forms.TextBox();
             this.txtWachtwoord = new System.Windows.Forms.TextBox();
+            this.lblGebruikersnaam = new System.Windows.Forms.Label();
+            this.lblWachtwoord = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // txtUsername
+            // txtGebruikersnaam
             // 
-            this.txtUsername.Location = new System.Drawing.Point(369, 96);
-            this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(100, 22);
-            this.txtUsername.TabIndex = 0;
+            this.txtGebruikersnaam.Location = new System.Drawing.Point(369, 96);
+            this.txtGebruikersnaam.Name = "txtGebruikersnaam";
+            this.txtGebruikersnaam.Size = new System.Drawing.Size(100, 22);
+            this.txtGebruikersnaam.TabIndex = 0;
             // 
             // txtWachtwoord
             // 
@@ -46,13 +48,33 @@
             this.txtWachtwoord.Size = new System.Drawing.Size(100, 22);
             this.txtWachtwoord.TabIndex = 1;
             // 
+            // lblGebruikersnaam
+            // 
+            this.lblGebruikersnaam.AutoSize = true;
+            this.lblGebruikersnaam.Location = new System.Drawing.Point(256, 99);
+            this.lblGebruikersnaam.Name = "lblGebruikersnaam";
+            this.lblGebruikersnaam.Size = new System.Drawing.Size(107, 16);
+            this.lblGebruikersnaam.TabIndex = 2;
+            this.lblGebruikersnaam.Text = "Gebruikersnaam";
+            // 
+            // lblWachtwoord
+            // 
+            this.lblWachtwoord.AutoSize = true;
+            this.lblWachtwoord.Location = new System.Drawing.Point(256, 163);
+            this.lblWachtwoord.Name = "lblWachtwoord";
+            this.lblWachtwoord.Size = new System.Drawing.Size(82, 16);
+            this.lblWachtwoord.TabIndex = 3;
+            this.lblWachtwoord.Text = "Wachtwoord";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lblWachtwoord);
+            this.Controls.Add(this.lblGebruikersnaam);
             this.Controls.Add(this.txtWachtwoord);
-            this.Controls.Add(this.txtUsername);
+            this.Controls.Add(this.txtGebruikersnaam);
             this.Name = "Form1";
             this.Text = "Form1";
             this.ResumeLayout(false);
@@ -62,8 +84,10 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox txtUsername;
+        private System.Windows.Forms.TextBox txtGebruikersnaam;
         private System.Windows.Forms.TextBox txtWachtwoord;
+        private System.Windows.Forms.Label lblGebruikersnaam;
+        private System.Windows.Forms.Label lblWachtwoord;
     }
 }
 
