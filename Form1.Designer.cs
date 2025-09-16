@@ -85,6 +85,7 @@
             this.btnInloggen.TabIndex = 4;
             this.btnInloggen.Text = "Inloggen";
             this.btnInloggen.UseVisualStyleBackColor = false;
+            this.btnInloggen.Click += new System.EventHandler(this.btnInloggen_Click);
             // 
             // pbxInlog
             // 
