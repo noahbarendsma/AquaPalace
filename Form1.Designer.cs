@@ -89,7 +89,6 @@
             // 
             // pbxInlog
             // 
-            this.pbxInlog.BackgroundImage = global::AquaPalace.Properties.Resources.ChatGPT_Image_12_sep_2025__11_46_31;
             this.pbxInlog.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pbxInlog.Location = new System.Drawing.Point(1, -1);
             this.pbxInlog.Name = "pbxInlog";
