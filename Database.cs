@@ -14,7 +14,7 @@ namespace AquaPalace
             string dbServername = "127.0.0.1";
             string dbUsername = "root";
             string dbPassword = "";
-            string dbDatabase = "aquapalace";
+            string dbDatabase = "aqaupalace";
 
             MySqlConnectionStringBuilder builder = new MySqlConnectionStringBuilder();
             builder.Server = dbServername;

@@ -29,26 +29,47 @@ namespace AquaPalace
                     con.Open();
 
                     // Haal alleen de gebruiker op met deze gebruikersnaam
-                    string sql = "SELECT user_password FROM users WHERE user_username = @gebruikersnaam";
+                    string sql = "SELECT user_password, user_role FROM users WHERE user_username = @gebruikersnaam";
 
                     using (MySqlCommand cmd = new MySqlCommand(sql, con))
                     {
                         cmd.Parameters.AddWithValue("@gebruikersnaam", txtGebruikersnaam.Text);
 
-                        object result = cmd.ExecuteScalar();
+                        MySqlDataReader reader = cmd.ExecuteReader();
 
-                        if (result != null)
+                        if (reader.Read())
                         {
-                            string hashedPassword = result.ToString();
+                            string hashedPassword = reader.GetString("user_password");
+                            string userRole = reader.GetString("user_role");
 
                             // Controleer of het ingevoerde wachtwoord klopt
                             if (BCrypt.Net.BCrypt.EnhancedVerify(txtWachtwoord.Text, hashedPassword))
                             {
-                                MessageBox.Show("Ingelogd!");
-                                FrmOverzicht frm = new FrmOverzicht();
-                                frm.Show();
-                                txtGebruikersnaam.Clear();
-                                txtWachtwoord.Clear();
+
+                                if (userRole == "admin")
+                                {
+                                    MessageBox.Show("Welkom administrator");
+                                    administrator FormAdministrator = new administrator();
+                                    FormAdministrator.Show();
+                                    txtGebruikersnaam.Clear();
+                                    txtWachtwoord.Clear();
+                                }
+                                else if (userRole == "werknemer")
+                                {
+                                    MessageBox.Show("Welkom werknemer");
+                                    werknemer FormWerknemer = new werknemer();
+                                    FormWerknemer.Show();
+                                    txtGebruikersnaam.Clear();
+                                    txtWachtwoord.Clear();
+                                }
+                                else // Klant
+                                {
+                                    MessageBox.Show("Welkom klant");
+                                    klant Formklant = new klant();
+                                    Formklant.Show();
+                                    txtGebruikersnaam.Clear();
+                                    txtWachtwoord.Clear();
+                                }
                             }
                             else
                             {
@@ -67,5 +88,23 @@ namespace AquaPalace
                 }
             }
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+
+//admin: 
+//eva_j
+//Eva@123
+
+//werknemer:
+//ava_d
+//Ava#456
+
+//klant:
+//isabella_j
+//Isabella@789
     }
 }
