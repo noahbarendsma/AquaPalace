@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Gegenereerd op: 05 sep 2025 om 09:49
+-- Gegenereerd op: 18 sep 2025 om 13:32
 -- Serverversie: 10.4.32-MariaDB
 -- PHP-versie: 8.0.30
 
@@ -96,16 +96,16 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`user_id`, `user_firstname`, `user_lastname`, `user_email`, `user_username`, `user_password`, `user_admin`, `user_role`) VALUES
-(1, 'Eva', 'Johnson', 'eva.johnson@email.com', 'eva_j', '$2a$11$BbonybeptV.xVZTjVJARv.kqdV7kHkhyUdPF9B6D2OqhdzOWolA2S', 0, 'standaard'),
-(2, 'Liam', 'Miller', 'liam.miller@email.com', 'liam_m', 'Liam#456', 0, 'standaard'),
-(3, 'Sophia', 'Smith', 'sophia.smith@email.com', 'sophia_s', 'Sophia@789', 0, 'standaard'),
-(4, 'Noah', 'Brown', 'noah.brown@email.com', 'noah_b', 'Noah_123', 0, 'standaard'),
-(5, 'Ava', 'Davis', 'ava.davis@email.com', 'ava_d', 'Ava#456', 0, 'standaard'),
-(6, 'Jackson', 'Martinez', 'jackson.martinez@email.co', 'jackson_m', 'Jackson@789', 0, 'standaard'),
-(7, 'Olivia', 'Garcia', 'olivia.g@email.com', 'olivia_g', 'Olivia_123', 0, 'standaard'),
-(8, 'Lucas', 'Williams', 'lucas.w@email.com', 'lucas_w', 'Lucas#456', 0, 'standaard'),
-(9, 'Isabella', 'Jones', 'isabella.j@email.com', 'isabella_j', 'Isabella@789', 0, 'standaard'),
-(10, 'Mia', 'Rodriguez', 'mia.rodriguez@email.com', 'mia_r', 'Mia_123', 0, 'standaard');
+(1, 'Eva', 'Johnson', 'eva.johnson@email.com', 'eva_j', '$2a$11$BbonybeptV.xVZTjVJARv.kqdV7kHkhyUdPF9B6D2OqhdzOWolA2S', 0, 'admin'),
+(2, 'Liam', 'Miller', 'liam.miller@email.com', 'liam_m', '$2a$11$9i3kj9osSQyaVTOPlVtkyu69VzjFRAsUsBK/D4.VzrfnVE2gb7kea', 0, 'admin'),
+(3, 'Sophia', 'Smith', 'sophia.smith@email.com', 'sophia_s', '$2a$11$wfyhLz/xsA8s1QRANHl0oeN6.ejUy/4HemiEAVwy6Bq85UTyOK/La', 0, 'admin'),
+(4, 'Noah', 'Brown', 'noah.brown@email.com', 'noah_b', '$2a$11$v1Zn/dP5DvH4CaKUcdHGEuulCmpIEeCQJ9Fe0AfJ4YNz492aIobGu', 0, 'admin'),
+(5, 'Ava', 'Davis', 'ava.davis@email.com', 'ava_d', '$2a$11$ahMWURDrr6j97qBjKySERuJVb3HTJ2QO8C5BuaaxSbAyOYtjiyVam', 0, 'werknemer'),
+(6, 'Jackson', 'Martinez', 'jackson.martinez@email.co', 'jackson_m', '$2a$11$PZjMdRc5.nTseH4BUpXje..rAFHkxJs4wA4yhisANXIHo4jYLLdMq', 0, 'werknemer'),
+(7, 'Olivia', 'Garcia', 'olivia.g@email.com', 'olivia_g', '$2a$11$/iNfZCRahQ3177wUSAwNYebRlaRRldEMv.lZnxhypCHRQRZM4cpla', 0, 'werknemer'),
+(8, 'Lucas', 'Williams', 'lucas.w@email.com', 'lucas_w', '$2a$11$64iY/7o4x94tK.TJZ0CtvuJCNqEpwoaf3DA1.kQ2hMAU7SLoQB1/q', 0, 'klant'),
+(9, 'Isabella', 'Jones', 'isabella.j@email.com', 'isabella_j', '$2a$11$Vwzr4pmrij6EfL2n0JpVdOe1PSpKEAiLVovKZ/KnnGQYkRdWFpRE6', 0, 'klant'),
+(10, 'Mia', 'Rodriguez', 'mia.rodriguez@email.com', 'mia_r', '$2a$11$7s4J4iJE7/BBitXaI6nT4u.TQc7k1SbPgxH/1nZMaU7WEMVjawWbi', 0, 'klant');
 
 --
 -- Indexen voor geëxporteerde tabellen
