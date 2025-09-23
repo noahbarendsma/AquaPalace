@@ -29,7 +29,7 @@ namespace AquaPalace
                     con.Open();
 
                     // Haal alleen de gebruiker op met deze gebruikersnaam
-                    string sql = "SELECT user_password, user_role FROM users WHERE user_username = @gebruikersnaam";
+                    string sql = "SELECT user_id, user_password, user_role FROM users WHERE user_username = @gebruikersnaam";
 
                     using (MySqlCommand cmd = new MySqlCommand(sql, con))
                     {
@@ -39,6 +39,7 @@ namespace AquaPalace
 
                         if (reader.Read())
                         {
+                            int userId = reader.GetInt32("user_id");
                             string hashedPassword = reader.GetString("user_password");
                             string userRole = reader.GetString("user_role");
 
@@ -66,6 +67,7 @@ namespace AquaPalace
                                 {
                                     MessageBox.Show("Welkom klant");
                                     klant Formklant = new klant();
+                                    Formklant.LoggedInUserId = userId;
                                     Formklant.Show();
                                     txtGebruikersnaam.Clear();
                                     txtWachtwoord.Clear();

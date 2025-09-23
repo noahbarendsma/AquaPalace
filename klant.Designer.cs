@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.btnOverzicht = new System.Windows.Forms.Button();
-            this.btnNieuwAbonnementAanschaffen = new System.Windows.Forms.Button();
             this.btnVerlengenAbonnement = new System.Windows.Forms.Button();
             this.btnIncheckenViaZuilGast = new System.Windows.Forms.Button();
             this.btnGeschiedenisGast = new System.Windows.Forms.Button();
@@ -41,12 +39,21 @@
             this.tpAbonnementVerlengen = new System.Windows.Forms.TabPage();
             this.tpIncheckenZuil = new System.Windows.Forms.TabPage();
             this.tpGeschiedenis = new System.Windows.Forms.TabPage();
+            this.dgvOverzichtAbonnementen = new System.Windows.Forms.DataGridView();
+            this.lblBeginDatum = new System.Windows.Forms.Label();
+            this.lblEindDatum = new System.Windows.Forms.Label();
+            this.dtpBeginDatum = new System.Windows.Forms.DateTimePicker();
+            this.dtpEindDatum = new System.Windows.Forms.DateTimePicker();
+            this.lblType = new System.Windows.Forms.Label();
+            this.cmbType = new System.Windows.Forms.ComboBox();
+            this.btnToevoegen = new System.Windows.Forms.Button();
             this.tcKlant.SuspendLayout();
             this.tpOverzichtAbonnementen.SuspendLayout();
             this.tpNieuwAbonnement.SuspendLayout();
             this.tpAbonnementVerlengen.SuspendLayout();
             this.tpIncheckenZuil.SuspendLayout();
             this.tpGeschiedenis.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvOverzichtAbonnementen)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -59,24 +66,6 @@
             this.label1.Size = new System.Drawing.Size(95, 39);
             this.label1.TabIndex = 2;
             this.label1.Text = "Klant";
-            // 
-            // btnOverzicht
-            // 
-            this.btnOverzicht.Location = new System.Drawing.Point(71, 68);
-            this.btnOverzicht.Name = "btnOverzicht";
-            this.btnOverzicht.Size = new System.Drawing.Size(188, 55);
-            this.btnOverzicht.TabIndex = 3;
-            this.btnOverzicht.Text = "Overzicht Abonnementen";
-            this.btnOverzicht.UseVisualStyleBackColor = true;
-            // 
-            // btnNieuwAbonnementAanschaffen
-            // 
-            this.btnNieuwAbonnementAanschaffen.Location = new System.Drawing.Point(119, 37);
-            this.btnNieuwAbonnementAanschaffen.Name = "btnNieuwAbonnementAanschaffen";
-            this.btnNieuwAbonnementAanschaffen.Size = new System.Drawing.Size(186, 55);
-            this.btnNieuwAbonnementAanschaffen.TabIndex = 4;
-            this.btnNieuwAbonnementAanschaffen.Text = "Nieuw Abonnement";
-            this.btnNieuwAbonnementAanschaffen.UseVisualStyleBackColor = true;
             // 
             // btnVerlengenAbonnement
             // 
@@ -129,7 +118,7 @@
             // 
             // tpOverzichtAbonnementen
             // 
-            this.tpOverzichtAbonnementen.Controls.Add(this.btnOverzicht);
+            this.tpOverzichtAbonnementen.Controls.Add(this.dgvOverzichtAbonnementen);
             this.tpOverzichtAbonnementen.Location = new System.Drawing.Point(4, 25);
             this.tpOverzichtAbonnementen.Name = "tpOverzichtAbonnementen";
             this.tpOverzichtAbonnementen.Padding = new System.Windows.Forms.Padding(3);
@@ -140,7 +129,13 @@
             // 
             // tpNieuwAbonnement
             // 
-            this.tpNieuwAbonnement.Controls.Add(this.btnNieuwAbonnementAanschaffen);
+            this.tpNieuwAbonnement.Controls.Add(this.btnToevoegen);
+            this.tpNieuwAbonnement.Controls.Add(this.cmbType);
+            this.tpNieuwAbonnement.Controls.Add(this.lblType);
+            this.tpNieuwAbonnement.Controls.Add(this.dtpEindDatum);
+            this.tpNieuwAbonnement.Controls.Add(this.dtpBeginDatum);
+            this.tpNieuwAbonnement.Controls.Add(this.lblEindDatum);
+            this.tpNieuwAbonnement.Controls.Add(this.lblBeginDatum);
             this.tpNieuwAbonnement.Location = new System.Drawing.Point(4, 25);
             this.tpNieuwAbonnement.Name = "tpNieuwAbonnement";
             this.tpNieuwAbonnement.Padding = new System.Windows.Forms.Padding(3);
@@ -177,10 +172,80 @@
             this.tpGeschiedenis.Location = new System.Drawing.Point(4, 25);
             this.tpGeschiedenis.Name = "tpGeschiedenis";
             this.tpGeschiedenis.Padding = new System.Windows.Forms.Padding(3);
-            this.tpGeschiedenis.Size = new System.Drawing.Size(530, 261);
+            this.tpGeschiedenis.Size = new System.Drawing.Size(646, 261);
             this.tpGeschiedenis.TabIndex = 5;
             this.tpGeschiedenis.Text = "Geschiedenis";
             this.tpGeschiedenis.UseVisualStyleBackColor = true;
+            // 
+            // dgvOverzichtAbonnementen
+            // 
+            this.dgvOverzichtAbonnementen.BackgroundColor = System.Drawing.SystemColors.Highlight;
+            this.dgvOverzichtAbonnementen.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvOverzichtAbonnementen.Location = new System.Drawing.Point(6, 3);
+            this.dgvOverzichtAbonnementen.Name = "dgvOverzichtAbonnementen";
+            this.dgvOverzichtAbonnementen.RowHeadersWidth = 51;
+            this.dgvOverzichtAbonnementen.RowTemplate.Height = 24;
+            this.dgvOverzichtAbonnementen.Size = new System.Drawing.Size(634, 252);
+            this.dgvOverzichtAbonnementen.TabIndex = 0;
+            // 
+            // lblBeginDatum
+            // 
+            this.lblBeginDatum.AutoSize = true;
+            this.lblBeginDatum.Location = new System.Drawing.Point(42, 13);
+            this.lblBeginDatum.Name = "lblBeginDatum";
+            this.lblBeginDatum.Size = new System.Drawing.Size(84, 16);
+            this.lblBeginDatum.TabIndex = 0;
+            this.lblBeginDatum.Text = "Begin Datum";
+            // 
+            // lblEindDatum
+            // 
+            this.lblEindDatum.AutoSize = true;
+            this.lblEindDatum.Location = new System.Drawing.Point(42, 50);
+            this.lblEindDatum.Name = "lblEindDatum";
+            this.lblEindDatum.Size = new System.Drawing.Size(76, 16);
+            this.lblEindDatum.TabIndex = 1;
+            this.lblEindDatum.Text = "Eind Datum";
+            // 
+            // dtpBeginDatum
+            // 
+            this.dtpBeginDatum.Location = new System.Drawing.Point(157, 7);
+            this.dtpBeginDatum.Name = "dtpBeginDatum";
+            this.dtpBeginDatum.Size = new System.Drawing.Size(200, 22);
+            this.dtpBeginDatum.TabIndex = 2;
+            // 
+            // dtpEindDatum
+            // 
+            this.dtpEindDatum.Location = new System.Drawing.Point(157, 45);
+            this.dtpEindDatum.Name = "dtpEindDatum";
+            this.dtpEindDatum.Size = new System.Drawing.Size(200, 22);
+            this.dtpEindDatum.TabIndex = 3;
+            // 
+            // lblType
+            // 
+            this.lblType.AutoSize = true;
+            this.lblType.Location = new System.Drawing.Point(42, 83);
+            this.lblType.Name = "lblType";
+            this.lblType.Size = new System.Drawing.Size(39, 16);
+            this.lblType.TabIndex = 4;
+            this.lblType.Text = "Type";
+            // 
+            // cmbType
+            // 
+            this.cmbType.FormattingEnabled = true;
+            this.cmbType.Location = new System.Drawing.Point(157, 74);
+            this.cmbType.Name = "cmbType";
+            this.cmbType.Size = new System.Drawing.Size(121, 24);
+            this.cmbType.TabIndex = 5;
+            // 
+            // btnToevoegen
+            // 
+            this.btnToevoegen.Location = new System.Drawing.Point(157, 121);
+            this.btnToevoegen.Name = "btnToevoegen";
+            this.btnToevoegen.Size = new System.Drawing.Size(200, 40);
+            this.btnToevoegen.TabIndex = 6;
+            this.btnToevoegen.Text = "Toevoegen";
+            this.btnToevoegen.UseVisualStyleBackColor = true;
+            this.btnToevoegen.Click += new System.EventHandler(this.btnToevoegen_Click);
             // 
             // klant
             // 
@@ -190,15 +255,18 @@
             this.Controls.Add(this.tcKlant);
             this.Controls.Add(this.btnUitloggen);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "klant";
             this.Text = "klant";
+            this.Load += new System.EventHandler(this.klant_Load);
             this.tcKlant.ResumeLayout(false);
             this.tpOverzichtAbonnementen.ResumeLayout(false);
             this.tpNieuwAbonnement.ResumeLayout(false);
+            this.tpNieuwAbonnement.PerformLayout();
             this.tpAbonnementVerlengen.ResumeLayout(false);
             this.tpIncheckenZuil.ResumeLayout(false);
             this.tpGeschiedenis.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvOverzichtAbonnementen)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -207,8 +275,6 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btnOverzicht;
-        private System.Windows.Forms.Button btnNieuwAbonnementAanschaffen;
         private System.Windows.Forms.Button btnVerlengenAbonnement;
         private System.Windows.Forms.Button btnIncheckenViaZuilGast;
         private System.Windows.Forms.Button btnGeschiedenisGast;
@@ -219,5 +285,13 @@
         private System.Windows.Forms.TabPage tpAbonnementVerlengen;
         private System.Windows.Forms.TabPage tpIncheckenZuil;
         private System.Windows.Forms.TabPage tpGeschiedenis;
+        private System.Windows.Forms.DataGridView dgvOverzichtAbonnementen;
+        private System.Windows.Forms.Label lblEindDatum;
+        private System.Windows.Forms.Label lblBeginDatum;
+        private System.Windows.Forms.Button btnToevoegen;
+        private System.Windows.Forms.ComboBox cmbType;
+        private System.Windows.Forms.Label lblType;
+        private System.Windows.Forms.DateTimePicker dtpEindDatum;
+        private System.Windows.Forms.DateTimePicker dtpBeginDatum;
     }
 }
