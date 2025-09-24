@@ -101,6 +101,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Abonnementen.cs" />
     <Compile Include="administrator.cs">
       <SubType>Form</SubType>
     </Compile>
