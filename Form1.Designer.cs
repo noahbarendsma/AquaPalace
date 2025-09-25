@@ -33,8 +33,8 @@
             this.lblGebruikersnaam = new System.Windows.Forms.Label();
             this.lblWachtwoord = new System.Windows.Forms.Label();
             this.btnInloggen = new System.Windows.Forms.Button();
-            this.pbxInlog = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxInlog)).BeginInit();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // txtGebruikersnaam
@@ -94,22 +94,23 @@
             this.btnInloggen.UseVisualStyleBackColor = false;
             this.btnInloggen.Click += new System.EventHandler(this.btnInloggen_Click);
             // 
-            // pbxInlog
+            // pictureBox1
             // 
-            this.pbxInlog.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pbxInlog.Location = new System.Drawing.Point(1, -1);
-            this.pbxInlog.Margin = new System.Windows.Forms.Padding(2);
-            this.pbxInlog.Name = "pbxInlog";
-            this.pbxInlog.Size = new System.Drawing.Size(189, 210);
-            this.pbxInlog.TabIndex = 5;
-            this.pbxInlog.TabStop = false;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pictureBox1.Image = global::AquaPalace.Properties.Resources.Schermafbeelding_2025_09_25_121734;
+            this.pictureBox1.Location = new System.Drawing.Point(12, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(175, 182);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 5;
+            this.pictureBox1.TabStop = false;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(372, 209);
-            this.Controls.Add(this.pbxInlog);
+            this.ClientSize = new System.Drawing.Size(395, 207);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnInloggen);
             this.Controls.Add(this.lblWachtwoord);
             this.Controls.Add(this.lblGebruikersnaam);
@@ -119,7 +120,7 @@
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pbxInlog)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -132,7 +133,7 @@
         private System.Windows.Forms.Label lblGebruikersnaam;
         private System.Windows.Forms.Label lblWachtwoord;
         private System.Windows.Forms.Button btnInloggen;
-        private System.Windows.Forms.PictureBox pbxInlog;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 

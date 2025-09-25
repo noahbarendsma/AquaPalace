@@ -63,6 +63,16 @@ namespace AquaPalace.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap ChatGPT_Image_25_sep_2025__12_12_23 {
+            get {
+                object obj = ResourceManager.GetObject("ChatGPT Image 25 sep 2025, 12_12_23", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Logo {
             get {
                 object obj = ResourceManager.GetObject("Logo", resourceCulture);
@@ -76,6 +86,16 @@ namespace AquaPalace.Properties {
         internal static System.Drawing.Bitmap Logo1 {
             get {
                 object obj = ResourceManager.GetObject("Logo1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Schermafbeelding_2025_09_25_121734 {
+            get {
+                object obj = ResourceManager.GetObject("Schermafbeelding 2025-09-25 121734", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
