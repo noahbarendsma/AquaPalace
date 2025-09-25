@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BCrypt.Net;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace AquaPalace
 {
@@ -50,7 +51,8 @@ namespace AquaPalace
                                 if (userRole == "admin")
                                 {
                                     MessageBox.Show("Welkom administrator");
-                                    administrator FormAdministrator = new administrator();
+                                    Administrator FormAdministrator = new Administrator();
+                                    Administrator.instance.username = txtGebruikersnaam.Text;
                                     FormAdministrator.Show();
                                     txtGebruikersnaam.Clear();
                                     txtWachtwoord.Clear();

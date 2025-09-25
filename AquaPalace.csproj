@@ -105,9 +105,23 @@
     <Compile Include="administrator.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="administrator.Designer.cs">
-      <DependentUpon>administrator.cs</DependentUpon>
+    <Compile Include="Administrator.Designer.cs">
+      <DependentUpon>Administrator.cs</DependentUpon>
     </Compile>
+    <Compile Include="administratorForms\overzichtAbbonementen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="administratorForms\overzichtAbbonementen.Designer.cs">
+      <DependentUpon>overzichtAbbonementen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="administratorForms\overzichtGebruikers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="administratorForms\overzichtGebruikers.Designer.cs">
+      <DependentUpon>overzichtGebruikers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="classes\abonnementen.cs" />
+    <Compile Include="classes\users.cs" />
     <Compile Include="Database.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>

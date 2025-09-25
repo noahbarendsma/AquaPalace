@@ -41,7 +41,7 @@ namespace AquaPalace
             using (MySqlConnection con = Database.start())
             {
                 con.Open();
-                string query = @"SELECT 
+                string query = @"SELECT
                             u.user_firstname AS 'First Name',
                             u.user_lastname  AS 'Last Name',
                             a.begin_datum    AS 'Begin Date',
@@ -66,14 +66,14 @@ namespace AquaPalace
             using (var con = Database.start())
             {
                 con.Open();
-                string query = @"SELECT 
+                string query = @"SELECT
                             user_id     AS 'Id',
                             user_firstname AS 'Voornaam',
                             user_lastname  AS 'Achternaam',
                             user_email AS 'Email'
                          FROM users
-                         WHERE (@filter = '' 
-                                OR user_firstname LIKE @like 
+                         WHERE (@filter = ''
+                                OR user_firstname LIKE @like
                                 OR user_lastname LIKE @like
                                 OR user_email LIKE @like)";
 
@@ -85,7 +85,7 @@ namespace AquaPalace
                     MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
                     DataTable dt = new DataTable();
                     adapter.Fill(dt);
-                        
+
                     dgv.DataSource = dt;
                 }
             }
@@ -96,7 +96,7 @@ namespace AquaPalace
             using (MySqlConnection con = Database.start())
             {
                 con.Open();
-                string query = @"INSERT INTO abonnementen (user_id, begin_datum, eind_datum, type, status) 
+                string query = @"INSERT INTO abonnementen (user_id, begin_datum, eind_datum, type, status)
                          VALUES (@userId, @begin, @eind, @type, @status)";
 
                 using (MySqlCommand cmd = new MySqlCommand(query, con))
@@ -135,11 +135,11 @@ namespace AquaPalace
             using (var con = Database.start())
             {
                 con.Open();
-                string query = @"SELECT abonnement_id 
-                 FROM abonnementen 
+                string query = @"SELECT abonnement_id
+                 FROM abonnementen
                  WHERE user_id = @userId
-                 AND begin_datum <= NOW() 
-                 AND eind_datum >= NOW() 
+                 AND begin_datum <= NOW()
+                 AND eind_datum >= NOW()
                  AND status = 'Active'
                  ORDER BY eind_datum DESC
                  LIMIT 1"; // neem het meest recente actieve abo
@@ -168,7 +168,7 @@ namespace AquaPalace
             using (var con = Database.start())
             {
                 con.Open();
-                string query = @"INSERT INTO incheck (datum, abonnement_id, locatie) 
+                string query = @"INSERT INTO incheck (datum, abonnement_id, locatie)
                          VALUES (NOW(), @abonnementId, @locatie)";
 
                 using (var cmd = new MySqlCommand(query, con))
@@ -186,7 +186,7 @@ namespace AquaPalace
                 con.Open();
                 string query = @"UPDATE abonnementen
                          SET user_id = @userId,
-                             status = CASE 
+                             status = CASE
                                          WHEN NOW() <= eind_datum THEN 'Actief'
                                          ELSE 'Niet actief'
                                       END
@@ -194,7 +194,7 @@ namespace AquaPalace
 
                 using (var cmd = new MySqlCommand(query, con))
                 {
-                    cmd.Parameters.AddWithValue("@userId", nieuweUserId);   
+                    cmd.Parameters.AddWithValue("@userId", nieuweUserId);
                     cmd.Parameters.AddWithValue("@abonnementId", abonnementId);
                     cmd.ExecuteNonQuery();
                 }
@@ -209,7 +209,7 @@ namespace AquaPalace
                 using (var con = Database.start())
                 {
                     con.Open();
-                    string query = @"SELECT 
+                    string query = @"SELECT
                                 a.abonnement_id,
                                 CONCAT(u.user_firstname, ' ', u.user_lastname) AS Klantnaam,
                                 a.begin_datum,
@@ -261,7 +261,7 @@ namespace AquaPalace
                 using (var con = Database.start())
                 {
                     con.Open();
-                    string query = @"SELECT user_id, user_firstname, user_lastname, user_email 
+                    string query = @"SELECT user_id, user_firstname, user_lastname, user_email
                              FROM users
                              WHERE (@filter = '' OR user_firstname LIKE @like OR user_lastname LIKE @like)";
 
@@ -293,9 +293,9 @@ namespace AquaPalace
                 using (var con = Database.start())
                 {
                     con.Open();
-                    string query = @"UPDATE users 
-                             SET user_firstname = @voornaam, 
-                                 user_lastname  = @achternaam, 
+                    string query = @"UPDATE users
+                             SET user_firstname = @voornaam,
+                                 user_lastname  = @achternaam,
                                  user_email          = @mail
                              WHERE user_id = @id";
 
@@ -315,5 +315,3 @@ namespace AquaPalace
 
     }
 }
-//ava_d
-//Ava#456
