@@ -53,6 +53,7 @@ namespace AquaPalace
                                     FormAdministrator.Show();
                                     txtGebruikersnaam.Clear();
                                     txtWachtwoord.Clear();
+                                    this.Hide();
                                 }
                                 else if (userRole == "werknemer")
                                 {
