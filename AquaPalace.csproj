@@ -150,6 +150,7 @@
     <Compile Include="werknemer.Designer.cs">
       <DependentUpon>werknemer.cs</DependentUpon>
     </Compile>
+    <Compile Include="Werknemers.cs" />
     <EmbeddedResource Include="administrator.resx">
       <DependentUpon>administrator.cs</DependentUpon>
     </EmbeddedResource>
