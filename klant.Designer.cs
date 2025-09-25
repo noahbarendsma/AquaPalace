@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblTitel = new System.Windows.Forms.Label();
             this.btnVerlengen = new System.Windows.Forms.Button();
             this.btnInchecken = new System.Windows.Forms.Button();
             this.btnUitloggen = new System.Windows.Forms.Button();
@@ -44,18 +44,21 @@
             this.lblEindDatum = new System.Windows.Forms.Label();
             this.lblBeginDatum = new System.Windows.Forms.Label();
             this.tpAbonnementVerlengen = new System.Windows.Forms.TabPage();
-            this.tpIncheckenZuil = new System.Windows.Forms.TabPage();
-            this.tpGeschiedenis = new System.Windows.Forms.TabPage();
-            this.lblAbonnement = new System.Windows.Forms.Label();
-            this.lblNieuweEindDatum = new System.Windows.Forms.Label();
-            this.cmbAbonnementen = new System.Windows.Forms.ComboBox();
             this.dtpNieuweEindDatum = new System.Windows.Forms.DateTimePicker();
-            this.lblUserId = new System.Windows.Forms.Label();
-            this.lblLocatie = new System.Windows.Forms.Label();
-            this.txtUser = new System.Windows.Forms.TextBox();
-            this.txtLocatie = new System.Windows.Forms.TextBox();
+            this.cmbAbonnementen = new System.Windows.Forms.ComboBox();
+            this.lblNieuweEindDatum = new System.Windows.Forms.Label();
+            this.lblAbonnement = new System.Windows.Forms.Label();
+            this.tpIncheckenZuil = new System.Windows.Forms.TabPage();
             this.lblResultaat = new System.Windows.Forms.Label();
+            this.txtLocatie = new System.Windows.Forms.TextBox();
+            this.txtUser = new System.Windows.Forms.TextBox();
+            this.lblLocatie = new System.Windows.Forms.Label();
+            this.lblUserId = new System.Windows.Forms.Label();
+            this.tpGeschiedenis = new System.Windows.Forms.TabPage();
             this.dgvAbonnementGeschiedenis = new System.Windows.Forms.DataGridView();
+            this.pbxAbonnementAanschaffen = new System.Windows.Forms.PictureBox();
+            this.pbxVerlengen = new System.Windows.Forms.PictureBox();
+            this.pbxInchecken = new System.Windows.Forms.PictureBox();
             this.tcKlant.SuspendLayout();
             this.tpOverzichtAbonnementen.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOverzichtAbonnementen)).BeginInit();
@@ -64,37 +67,44 @@
             this.tpIncheckenZuil.SuspendLayout();
             this.tpGeschiedenis.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAbonnementGeschiedenis)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxAbonnementAanschaffen)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxVerlengen)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxInchecken)).BeginInit();
             this.SuspendLayout();
             // 
-            // label1
+            // lblTitel
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(13, 9);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(95, 39);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Klant";
+            this.lblTitel.AutoSize = true;
+            this.lblTitel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitel.Location = new System.Drawing.Point(13, 9);
+            this.lblTitel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblTitel.Name = "lblTitel";
+            this.lblTitel.Size = new System.Drawing.Size(95, 39);
+            this.lblTitel.TabIndex = 2;
+            this.lblTitel.Text = "Klant";
             // 
             // btnVerlengen
             // 
+            this.btnVerlengen.BackColor = System.Drawing.SystemColors.Highlight;
+            this.btnVerlengen.ForeColor = System.Drawing.SystemColors.Control;
             this.btnVerlengen.Location = new System.Drawing.Point(209, 122);
             this.btnVerlengen.Name = "btnVerlengen";
             this.btnVerlengen.Size = new System.Drawing.Size(213, 46);
             this.btnVerlengen.TabIndex = 5;
             this.btnVerlengen.Text = "Abonnement verlengen";
-            this.btnVerlengen.UseVisualStyleBackColor = true;
+            this.btnVerlengen.UseVisualStyleBackColor = false;
             this.btnVerlengen.Click += new System.EventHandler(this.btnVerlengen_Click);
             // 
             // btnInchecken
             // 
-            this.btnInchecken.Location = new System.Drawing.Point(116, 88);
+            this.btnInchecken.BackColor = System.Drawing.SystemColors.Highlight;
+            this.btnInchecken.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnInchecken.Location = new System.Drawing.Point(119, 125);
             this.btnInchecken.Name = "btnInchecken";
             this.btnInchecken.Size = new System.Drawing.Size(186, 52);
             this.btnInchecken.TabIndex = 6;
             this.btnInchecken.Text = "Inchecken via zuil";
-            this.btnInchecken.UseVisualStyleBackColor = true;
+            this.btnInchecken.UseVisualStyleBackColor = false;
             this.btnInchecken.Click += new System.EventHandler(this.btnInchecken_Click);
             // 
             // btnUitloggen
@@ -145,6 +155,8 @@
             // 
             // tpNieuwAbonnement
             // 
+            this.tpNieuwAbonnement.BackColor = System.Drawing.Color.DarkGray;
+            this.tpNieuwAbonnement.Controls.Add(this.pbxAbonnementAanschaffen);
             this.tpNieuwAbonnement.Controls.Add(this.btnToevoegen);
             this.tpNieuwAbonnement.Controls.Add(this.cmbType);
             this.tpNieuwAbonnement.Controls.Add(this.lblType);
@@ -158,30 +170,31 @@
             this.tpNieuwAbonnement.Size = new System.Drawing.Size(684, 261);
             this.tpNieuwAbonnement.TabIndex = 2;
             this.tpNieuwAbonnement.Text = "Abonnement Aanschaffen";
-            this.tpNieuwAbonnement.UseVisualStyleBackColor = true;
             // 
             // btnToevoegen
             // 
-            this.btnToevoegen.Location = new System.Drawing.Point(157, 121);
+            this.btnToevoegen.BackColor = System.Drawing.SystemColors.Highlight;
+            this.btnToevoegen.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnToevoegen.Location = new System.Drawing.Point(144, 192);
             this.btnToevoegen.Name = "btnToevoegen";
-            this.btnToevoegen.Size = new System.Drawing.Size(200, 40);
+            this.btnToevoegen.Size = new System.Drawing.Size(214, 40);
             this.btnToevoegen.TabIndex = 6;
             this.btnToevoegen.Text = "Aanschaffen";
-            this.btnToevoegen.UseVisualStyleBackColor = true;
+            this.btnToevoegen.UseVisualStyleBackColor = false;
             this.btnToevoegen.Click += new System.EventHandler(this.btnToevoegen_Click);
             // 
             // cmbType
             // 
             this.cmbType.FormattingEnabled = true;
-            this.cmbType.Location = new System.Drawing.Point(157, 74);
+            this.cmbType.Location = new System.Drawing.Point(144, 136);
             this.cmbType.Name = "cmbType";
-            this.cmbType.Size = new System.Drawing.Size(121, 24);
+            this.cmbType.Size = new System.Drawing.Size(214, 24);
             this.cmbType.TabIndex = 5;
             // 
             // lblType
             // 
             this.lblType.AutoSize = true;
-            this.lblType.Location = new System.Drawing.Point(42, 83);
+            this.lblType.Location = new System.Drawing.Point(42, 144);
             this.lblType.Name = "lblType";
             this.lblType.Size = new System.Drawing.Size(39, 16);
             this.lblType.TabIndex = 4;
@@ -189,22 +202,22 @@
             // 
             // dtpEindDatum
             // 
-            this.dtpEindDatum.Location = new System.Drawing.Point(157, 45);
+            this.dtpEindDatum.Location = new System.Drawing.Point(144, 73);
             this.dtpEindDatum.Name = "dtpEindDatum";
-            this.dtpEindDatum.Size = new System.Drawing.Size(200, 22);
+            this.dtpEindDatum.Size = new System.Drawing.Size(214, 22);
             this.dtpEindDatum.TabIndex = 3;
             // 
             // dtpBeginDatum
             // 
-            this.dtpBeginDatum.Location = new System.Drawing.Point(157, 7);
+            this.dtpBeginDatum.Location = new System.Drawing.Point(144, 8);
             this.dtpBeginDatum.Name = "dtpBeginDatum";
-            this.dtpBeginDatum.Size = new System.Drawing.Size(200, 22);
+            this.dtpBeginDatum.Size = new System.Drawing.Size(214, 22);
             this.dtpBeginDatum.TabIndex = 2;
             // 
             // lblEindDatum
             // 
             this.lblEindDatum.AutoSize = true;
-            this.lblEindDatum.Location = new System.Drawing.Point(42, 50);
+            this.lblEindDatum.Location = new System.Drawing.Point(42, 78);
             this.lblEindDatum.Name = "lblEindDatum";
             this.lblEindDatum.Size = new System.Drawing.Size(76, 16);
             this.lblEindDatum.TabIndex = 1;
@@ -221,6 +234,8 @@
             // 
             // tpAbonnementVerlengen
             // 
+            this.tpAbonnementVerlengen.BackColor = System.Drawing.Color.DarkGray;
+            this.tpAbonnementVerlengen.Controls.Add(this.pbxVerlengen);
             this.tpAbonnementVerlengen.Controls.Add(this.dtpNieuweEindDatum);
             this.tpAbonnementVerlengen.Controls.Add(this.cmbAbonnementen);
             this.tpAbonnementVerlengen.Controls.Add(this.lblNieuweEindDatum);
@@ -232,10 +247,44 @@
             this.tpAbonnementVerlengen.Size = new System.Drawing.Size(684, 261);
             this.tpAbonnementVerlengen.TabIndex = 3;
             this.tpAbonnementVerlengen.Text = "Abonnement verlengen";
-            this.tpAbonnementVerlengen.UseVisualStyleBackColor = true;
+            // 
+            // dtpNieuweEindDatum
+            // 
+            this.dtpNieuweEindDatum.Location = new System.Drawing.Point(209, 72);
+            this.dtpNieuweEindDatum.Name = "dtpNieuweEindDatum";
+            this.dtpNieuweEindDatum.Size = new System.Drawing.Size(213, 22);
+            this.dtpNieuweEindDatum.TabIndex = 9;
+            // 
+            // cmbAbonnementen
+            // 
+            this.cmbAbonnementen.FormattingEnabled = true;
+            this.cmbAbonnementen.Location = new System.Drawing.Point(209, 24);
+            this.cmbAbonnementen.Name = "cmbAbonnementen";
+            this.cmbAbonnementen.Size = new System.Drawing.Size(213, 24);
+            this.cmbAbonnementen.TabIndex = 8;
+            // 
+            // lblNieuweEindDatum
+            // 
+            this.lblNieuweEindDatum.AutoSize = true;
+            this.lblNieuweEindDatum.Location = new System.Drawing.Point(31, 79);
+            this.lblNieuweEindDatum.Name = "lblNieuweEindDatum";
+            this.lblNieuweEindDatum.Size = new System.Drawing.Size(119, 16);
+            this.lblNieuweEindDatum.TabIndex = 7;
+            this.lblNieuweEindDatum.Text = "Nieuwe Einddatum";
+            // 
+            // lblAbonnement
+            // 
+            this.lblAbonnement.AutoSize = true;
+            this.lblAbonnement.Location = new System.Drawing.Point(31, 32);
+            this.lblAbonnement.Name = "lblAbonnement";
+            this.lblAbonnement.Size = new System.Drawing.Size(144, 16);
+            this.lblAbonnement.TabIndex = 6;
+            this.lblAbonnement.Text = "Selecteer Abonnement";
             // 
             // tpIncheckenZuil
             // 
+            this.tpIncheckenZuil.BackColor = System.Drawing.Color.DarkGray;
+            this.tpIncheckenZuil.Controls.Add(this.pbxInchecken);
             this.tpIncheckenZuil.Controls.Add(this.lblResultaat);
             this.tpIncheckenZuil.Controls.Add(this.txtLocatie);
             this.tpIncheckenZuil.Controls.Add(this.txtUser);
@@ -248,7 +297,48 @@
             this.tpIncheckenZuil.Size = new System.Drawing.Size(684, 261);
             this.tpIncheckenZuil.TabIndex = 4;
             this.tpIncheckenZuil.Text = "Inchecken via zuil";
-            this.tpIncheckenZuil.UseVisualStyleBackColor = true;
+            // 
+            // lblResultaat
+            // 
+            this.lblResultaat.AutoSize = true;
+            this.lblResultaat.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblResultaat.Location = new System.Drawing.Point(178, 202);
+            this.lblResultaat.Name = "lblResultaat";
+            this.lblResultaat.Size = new System.Drawing.Size(73, 16);
+            this.lblResultaat.TabIndex = 11;
+            this.lblResultaat.Text = "Resultaat";
+            // 
+            // txtLocatie
+            // 
+            this.txtLocatie.Location = new System.Drawing.Point(163, 87);
+            this.txtLocatie.Name = "txtLocatie";
+            this.txtLocatie.Size = new System.Drawing.Size(100, 22);
+            this.txtLocatie.TabIndex = 10;
+            // 
+            // txtUser
+            // 
+            this.txtUser.Location = new System.Drawing.Point(163, 39);
+            this.txtUser.Name = "txtUser";
+            this.txtUser.Size = new System.Drawing.Size(100, 22);
+            this.txtUser.TabIndex = 9;
+            // 
+            // lblLocatie
+            // 
+            this.lblLocatie.AutoSize = true;
+            this.lblLocatie.Location = new System.Drawing.Point(52, 93);
+            this.lblLocatie.Name = "lblLocatie";
+            this.lblLocatie.Size = new System.Drawing.Size(51, 16);
+            this.lblLocatie.TabIndex = 8;
+            this.lblLocatie.Text = "Locatie";
+            // 
+            // lblUserId
+            // 
+            this.lblUserId.AutoSize = true;
+            this.lblUserId.Location = new System.Drawing.Point(38, 42);
+            this.lblUserId.Name = "lblUserId";
+            this.lblUserId.Size = new System.Drawing.Size(80, 16);
+            this.lblUserId.TabIndex = 7;
+            this.lblUserId.Text = "Gebruiker id";
             // 
             // tpGeschiedenis
             // 
@@ -261,80 +351,6 @@
             this.tpGeschiedenis.Text = "Geschiedenis";
             this.tpGeschiedenis.UseVisualStyleBackColor = true;
             // 
-            // lblAbonnement
-            // 
-            this.lblAbonnement.AutoSize = true;
-            this.lblAbonnement.Location = new System.Drawing.Point(31, 24);
-            this.lblAbonnement.Name = "lblAbonnement";
-            this.lblAbonnement.Size = new System.Drawing.Size(144, 16);
-            this.lblAbonnement.TabIndex = 6;
-            this.lblAbonnement.Text = "Selecteer Abonnement";
-            // 
-            // lblNieuweEindDatum
-            // 
-            this.lblNieuweEindDatum.AutoSize = true;
-            this.lblNieuweEindDatum.Location = new System.Drawing.Point(31, 79);
-            this.lblNieuweEindDatum.Name = "lblNieuweEindDatum";
-            this.lblNieuweEindDatum.Size = new System.Drawing.Size(119, 16);
-            this.lblNieuweEindDatum.TabIndex = 7;
-            this.lblNieuweEindDatum.Text = "Nieuwe Einddatum";
-            // 
-            // cmbAbonnementen
-            // 
-            this.cmbAbonnementen.FormattingEnabled = true;
-            this.cmbAbonnementen.Location = new System.Drawing.Point(209, 24);
-            this.cmbAbonnementen.Name = "cmbAbonnementen";
-            this.cmbAbonnementen.Size = new System.Drawing.Size(213, 24);
-            this.cmbAbonnementen.TabIndex = 8;
-            // 
-            // dtpNieuweEindDatum
-            // 
-            this.dtpNieuweEindDatum.Location = new System.Drawing.Point(209, 72);
-            this.dtpNieuweEindDatum.Name = "dtpNieuweEindDatum";
-            this.dtpNieuweEindDatum.Size = new System.Drawing.Size(213, 22);
-            this.dtpNieuweEindDatum.TabIndex = 9;
-            // 
-            // lblUserId
-            // 
-            this.lblUserId.AutoSize = true;
-            this.lblUserId.Location = new System.Drawing.Point(33, 17);
-            this.lblUserId.Name = "lblUserId";
-            this.lblUserId.Size = new System.Drawing.Size(80, 16);
-            this.lblUserId.TabIndex = 7;
-            this.lblUserId.Text = "Gebruiker id";
-            // 
-            // lblLocatie
-            // 
-            this.lblLocatie.AutoSize = true;
-            this.lblLocatie.Location = new System.Drawing.Point(33, 59);
-            this.lblLocatie.Name = "lblLocatie";
-            this.lblLocatie.Size = new System.Drawing.Size(51, 16);
-            this.lblLocatie.TabIndex = 8;
-            this.lblLocatie.Text = "Locatie";
-            // 
-            // txtUser
-            // 
-            this.txtUser.Location = new System.Drawing.Point(163, 14);
-            this.txtUser.Name = "txtUser";
-            this.txtUser.Size = new System.Drawing.Size(100, 22);
-            this.txtUser.TabIndex = 9;
-            // 
-            // txtLocatie
-            // 
-            this.txtLocatie.Location = new System.Drawing.Point(163, 59);
-            this.txtLocatie.Name = "txtLocatie";
-            this.txtLocatie.Size = new System.Drawing.Size(100, 22);
-            this.txtLocatie.TabIndex = 10;
-            // 
-            // lblResultaat
-            // 
-            this.lblResultaat.AutoSize = true;
-            this.lblResultaat.Location = new System.Drawing.Point(173, 143);
-            this.lblResultaat.Name = "lblResultaat";
-            this.lblResultaat.Size = new System.Drawing.Size(64, 16);
-            this.lblResultaat.TabIndex = 11;
-            this.lblResultaat.Text = "Resultaat";
-            // 
             // dgvAbonnementGeschiedenis
             // 
             this.dgvAbonnementGeschiedenis.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -346,6 +362,36 @@
             this.dgvAbonnementGeschiedenis.TabIndex = 0;
             this.dgvAbonnementGeschiedenis.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAbonnementGeschiedenis_CellContentClick);
             // 
+            // pbxAbonnementAanschaffen
+            // 
+            this.pbxAbonnementAanschaffen.Image = global::AquaPalace.Properties.Resources.ChatGPT_Image_25_sep_2025__14_14_35;
+            this.pbxAbonnementAanschaffen.Location = new System.Drawing.Point(384, 8);
+            this.pbxAbonnementAanschaffen.Name = "pbxAbonnementAanschaffen";
+            this.pbxAbonnementAanschaffen.Size = new System.Drawing.Size(294, 247);
+            this.pbxAbonnementAanschaffen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbxAbonnementAanschaffen.TabIndex = 7;
+            this.pbxAbonnementAanschaffen.TabStop = false;
+            // 
+            // pbxVerlengen
+            // 
+            this.pbxVerlengen.Image = global::AquaPalace.Properties.Resources.verlengen;
+            this.pbxVerlengen.Location = new System.Drawing.Point(449, 15);
+            this.pbxVerlengen.Name = "pbxVerlengen";
+            this.pbxVerlengen.Size = new System.Drawing.Size(214, 230);
+            this.pbxVerlengen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbxVerlengen.TabIndex = 10;
+            this.pbxVerlengen.TabStop = false;
+            // 
+            // pbxInchecken
+            // 
+            this.pbxInchecken.Image = global::AquaPalace.Properties.Resources.ChatGPT_Image_25_sep_2025__14_20_04;
+            this.pbxInchecken.Location = new System.Drawing.Point(391, 3);
+            this.pbxInchecken.Name = "pbxInchecken";
+            this.pbxInchecken.Size = new System.Drawing.Size(191, 171);
+            this.pbxInchecken.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbxInchecken.TabIndex = 12;
+            this.pbxInchecken.TabStop = false;
+            // 
             // klant
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -353,7 +399,7 @@
             this.ClientSize = new System.Drawing.Size(711, 372);
             this.Controls.Add(this.tcKlant);
             this.Controls.Add(this.btnUitloggen);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblTitel);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "klant";
             this.Text = "klant";
@@ -369,6 +415,9 @@
             this.tpIncheckenZuil.PerformLayout();
             this.tpGeschiedenis.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvAbonnementGeschiedenis)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxAbonnementAanschaffen)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxVerlengen)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxInchecken)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -376,7 +425,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblTitel;
         private System.Windows.Forms.Button btnVerlengen;
         private System.Windows.Forms.Button btnInchecken;
         private System.Windows.Forms.Button btnUitloggen;
@@ -404,5 +453,8 @@
         private System.Windows.Forms.Label lblUserId;
         private System.Windows.Forms.Label lblResultaat;
         private System.Windows.Forms.DataGridView dgvAbonnementGeschiedenis;
+        private System.Windows.Forms.PictureBox pbxVerlengen;
+        private System.Windows.Forms.PictureBox pbxAbonnementAanschaffen;
+        private System.Windows.Forms.PictureBox pbxInchecken;
     }
 }

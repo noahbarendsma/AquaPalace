@@ -124,10 +124,16 @@ namespace AquaPalace
 
         private void btnInchecken_Click(object sender, EventArgs e)
         {
+            lblResultaat.AutoSize = false;
+            lblResultaat.Width = 300;
+            lblResultaat.Height = 40;
+            lblResultaat.TextAlign = ContentAlignment.MiddleCenter;
+            //lblResultaat.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+
             if (!int.TryParse(txtUser.Text, out int userId))
             {
                 lblResultaat.ForeColor = Color.Red;
-                lblResultaat.Text = "Voer een geldig klantnummer (userId) in.";
+                lblResultaat.Text = "Voer een geldig klantnummer in.";
                 return;
             }
 
