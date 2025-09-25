@@ -101,12 +101,26 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="administrator.cs">
+    <Compile Include="Administrator.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="administrator.Designer.cs">
-      <DependentUpon>administrator.cs</DependentUpon>
+    <Compile Include="Administrator.Designer.cs">
+      <DependentUpon>Administrator.cs</DependentUpon>
     </Compile>
+    <Compile Include="administratorForms\overzichtAbbonementen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="administratorForms\overzichtAbbonementen.Designer.cs">
+      <DependentUpon>overzichtAbbonementen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="administratorForms\overzichtGebruikers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="administratorForms\overzichtGebruikers.Designer.cs">
+      <DependentUpon>overzichtGebruikers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="classes\abonnementen.cs" />
+    <Compile Include="classes\users.cs" />
     <Compile Include="Database.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -134,8 +148,14 @@
     <Compile Include="werknemer.Designer.cs">
       <DependentUpon>werknemer.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="administrator.resx">
-      <DependentUpon>administrator.cs</DependentUpon>
+    <EmbeddedResource Include="Administrator.resx">
+      <DependentUpon>Administrator.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="administratorForms\overzichtAbbonementen.resx">
+      <DependentUpon>overzichtAbbonementen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="administratorForms\overzichtGebruikers.resx">
+      <DependentUpon>overzichtGebruikers.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
